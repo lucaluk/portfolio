@@ -15,592 +15,112 @@
  <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
 
-         <style>
-:root {
-            --primary-color: #ffe81d; 
-    --secondary-color :#7b31c0;
+    <style>
+
+    body{
+        background-color: transparent;
+    }
+    
+    .tags-group{
+    flex-direction: row;
+   display: flex;
+   gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
-    body {
-        background-color: transparent; /* Consolidated to a single rule */
-    }
 
-    .tags-group {
-        flex-direction: row;
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        margin-bottom: 24px;
-    }
-
-    .badge {
-        background-color: black;
-        border-width: 0.5px;
-        color: white;
-        padding: 4px 12px;
-        text-align: center;
-        font-size: medium;
-    }
-
-    .badge-white {
-        background-color: rgb(255, 255, 255);
-        border-width: 0.5px;
-        color: rgb(0, 0, 0);
-        padding: 4px 12px;
-        text-align: center;
-        font-size: medium;
-    }
-
-    .badge-section .text-huge-title {
-        margin-left: -12px;
-    }
-
-    .industries-badges .text-subtitle,
-    .projects-badges .text-subtitle {
-        margin-left: -16px;
-    }
-
-    .section-padding {
-        padding: 100px 0;
-    }
-
-    .badge-wrap {
-        gap: 12px;
-        width: 60vw;
-    }
-
-    .industries-badges {
-        padding-right: 120px;
-    }
-
-    #testimonial-section {
-        padding: 8rem 0;
-    }
-
-    .slider {
-        position: relative;
-        width: 100%; /* Adjust based on your layout needs */
-        overflow: hidden; /* Keeps anything outside the slider div from being visible */
-    }
-
-    .slider-contorls {
-        left: 5rem;
-        top: 5rem;
-        position: absolute;
-    }
-
-    .control-button {
-        padding: 0;
-    }
-
-    .slides {
-        width: 100%;
-        margin-top: 8rem;
-    }
-
-    .slide {
-        display: none; /* Hide all slides by default */
-        width: 100%; /* Adjust based on your layout needs */
-        padding: 20px; /* Provides some space inside the slide */
-        text-align: center; /* Center the text inside the slide */
-    }
-
-    .slide.active {
-        display: block; /* Only the active slide is shown */
-    }
-
-    .prev,
-    .next {
-        top: 50%;
-        transform: translateY(-50%);
-        width: 48px; /* Size of the SVG */
-        height: 48px; /* Size of the SVG */
-        background-color: rgb(0, 0, 0);
-        cursor: pointer;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .prev svg,
-    .next svg {
-        fill: white; /* Adjust if you need a different color */
-        width: 50%;
-        height: auto;
-    }
-
-    .prev {
-        left: 10px;
-    }
-
-    .next {
-        right: 10px;
-    }
-
-    .tesmintonal-profile-pic {
-        width: 80px;
-        height: 80px;
-        margin-right: 12px;
-    }
-
-    .testimonial-profile-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 2rem;
-    }
-
-    .tesminonail-paragraph {
-        text-align: left;
-        font-size: 2rem;
-        margin-bottom: 0;
-        line-height: 180%;
-    }
-
-    .testimonial-name-wrapper {
-        text-align: left;
-    }
-
-    .testimonial-wrapper {
-        width: 50%; /* Each testimonial takes up half the width of the slide */
-        float: left; /* Align testimonials side by side */
-        box-sizing: border-box;
-        /* Optional: Adjust padding based on design needs */
-    }
-
-    .linkedIn-card {
- 
-        margin: 0;
-        height: 160px;
-        display: block;
-        object-fit: contain;
-        margin-top: 16px;
-    }
-
-    .footer-contact-wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: auto;
-        text-align: center;
-    }
-
-    .footer-image {
-        margin-bottom: 40px;
-        display: block;
-        height: 240px;
-        width: auto;
-        margin-top: -80px;
-    }
-
-    .email-link svg {
-        margin-right: 8px;
-    }
-
-    .footer-contact-wrap .email-link {
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .case-study-paragraph-wrap {
-        margin-bottom: 16px;
-    }
-
-    .reduced-margin-bottom {
-        margin-bottom: 1rem;
-    }
-
-    .big-image {
-        height: 100%;
-        width: 100vw;
-        object-fit: cover;
-    }
-
-    @media screen and (max-width: 900px) {
-
-        .comics-narrative {
-            justify-self: center;
-        }
-
-        .comics-narrative p {
-            max-width: none;
-        }
-
-        .text-home-title {
-            font-size: 80px;
-            padding: 0 40px;
-        }
-
-        .title-icon {
-            width: 100px;
-            height: 100px;
-        }
-
-        .title-paragraph {
-            font-size: 3rem;
-            margin: 0px 36px 40px 36px;
-            line-height: 140%;
-            text-align: center;
-        }
-
-        .work-card {
-            padding: 18px;
-            margin-top: 24px;
-        }
-
-        .badge-wrap {
-            gap: 12px;
-            width: 100%;
-        }
-
-        .image-caption-left,
-        .image-caption-right {
-            padding: 0 2rem 24px 2rem;
-            order: -1;
-        }
-
-         .testimonial-wrapper {
-        width: 100%; /* Each testimonial takes up half the width of the slide */
-      
-    }
-
-    }
-
-    @media screen and (max-width: 600px) {
-
-        .title-paragraph {
-            font-size: 2rem;
-            margin: 0px 18px 40px 18px;
-            line-height: 140%;
-        }
-
-         .footer-image {
-        margin-bottom: 40px;
-        display: block;
-        height: 200px;
-        width: auto;
-        /* margin-top: -80px; */
-    }
-
-
-        .big-image {
-            height: 100%;
-            width: 100vw;
-            object-fit: cover;
-        }
-    }
-
-    @media screen and (max-width: 400px) {
-
-        .slider-contorls {
-            left: auto;
-            top: 5rem;
-            position: absolute;
-        }
-
-        .title-icon {
-            width: 80px;
-            height: 80px;
-            margin-right: 12px;
-            margin-bottom: 20px;
-            margin-left: -16px;
-        }
-
-        .title-paragraph {
-            font-size: 2rem;
-            margin: 0px 18px 40px 18px;
-            line-height: 140%;
-        }
-
-        .work-card {
-            padding: 18px;
-            margin-top: 24px;
-        }
-
-        .text-home-title {
-            font-size: 6rem;
-            padding: 0 40px;
-        }
-
-        .industries-badges {
-            padding-right: 0px;
-            margin-bottom: 24px;
-        }
-
-.industries-badges .text-subtitle,
-    .projects-badges .text-subtitle {
-        margin-left: 0;
-    }
-          .footer-image {
-        margin-bottom: 40px;
-        display: block;
-        height: 160px;
-        width: auto;
-        /* margin-top: -80px; */
-    }
-    }
-
-    /* case study  */
-
-    .case-study-hero {
-        position: relative;
-        height: 100svh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    .case-study-hero-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
-
-    .content-wrapper {
-        position: relative;
-        width: 100%;
-        max-width: 1200px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 1;
-    }
-
-    .additional-hero-image {
-        width: 100%;
-        height: 100%;
-        max-height: 60svh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-    }
-
-    .additional-hero-image .hero-image {
-        width: 100%;
-        max-height: 60vh;
-        object-fit: contain;
-height: 100%;
-margin-top: 5svh;
-padding-bottom: 24px;
-}
-
-.hero-text {
-    width: 100%;
+.badge {
+    background-color: black;
+    border-width: 0.5px;
+    color: white;
+    padding: 4px 12px;
     text-align: center;
+    font-size: medium;
+  }
+
+  .badge-white {
+    background-color: rgb(255, 255, 255);
+    border-width: 0.5px;
+    color: rgb(0, 0, 0);
+    padding: 4px 12px;
+    text-align: center;
+    font-size: medium;
+  }
+
+
+.bage-section .text-huge-title{
+    margin-left: -12px;
+}
+
+.text-subtitle{
+    margin-left: -16px;
+}
+
+
+.section-padding{
+    padding: 100px 0;
+}
+.badge-wrap{
     gap: 12px;
-    z-index: 2;
-    margin-bottom: 20px;
+  width: 60vw;
 }
 
-.hero-text h1 {
-    margin: 0;
-    padding: 16px 0;
+ .industries-badges{
+    padding-right: 120px;
+    
+  }
+
+  .bage-section .text-subtitle{
+    margin-left: -16px;
 }
 
-.hero-text p {
-    max-width: 600px;
-    margin: 0 auto;
-    white-space: normal;
+/* testimonial  */
+#testimonial-section{
+    padding: 8rem 0 8rem 0;
+}
+.slider {
+    position: relative;
+    width: 100%; /* Adjust based on your layout needs */
+    overflow: hidden; /* Keeps anything outside the slider div from being visible */
 }
 
-.center {
-    margin: 0 auto;
+.slider-contorls{
+ left: 5rem;
+top: 5rem;
+position: absolute;
 }
 
-.left {
-    text-align: left;
-}
-
-.list-paragraph li {
-    padding-bottom: 8px;
-}
-
-.animate-on-load {
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-.big-image-with-caption {
-    padding: 2rem 0;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@media (max-width: 768px) {
-    .additional-hero-image {
-        margin-top: -20px;
-    }
-
-    .additional-hero-image .hero-image {
-        max-height: 60vh;
-    }
-
-    .hero-text {
-        margin-bottom: 10px;
-        padding: 0 10px;
-    }
-
-    .hero-text p {
-        max-width: 90%;
-        padding: 0 10px;
-    }
-}
-
-@media (max-width: 600px) {
-    .additional-hero-image .hero-image {
-        height: 60vh;
-        object-fit: cover;
-    }
-
-    .overview-item {
-        padding-top: 24px;
-    }
-}
-
-.remove-margin {
-    margin: 0;
-}
-
-.remove-padding {
+.control-button{
     padding: 0;
 }
 
-.image-container {
-    position: relative;
+.slides {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+    margin-top: 8rem;
 }
 
-.image-container img {
-    width: 100%;
-    height: auto;
+.slide {
+    display: none; /* Hide all slides by default */
+    width: 100%; /* Adjust based on your layout needs */
+    padding: 20px; /* Provides some space inside the slide */
+    text-align: center; /* Center the text inside the slide */
 }
 
-.tags-group.special-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
+.slide.active {
+    display: block; /* Only the active slide is shown */
 }
 
-.special-badge .badge {
-    background-color: black;
-    color: white;
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 3px;
-}
 
-.case-intro {
-    background-color: white;
-    padding: 8rem 0;
-}
 
-.case-intro .text-wrapper {
-    text-align: center;
-}
 
-.case-study-paragraph-wrap {
-    padding: 0 0 24px 0;
-}
-
-.case-intro .text-wrapper p {
-    width: 30vw;
-    padding: 0px;
-    display: block;
-    margin: 36px auto;
-}
-
-.case-intro .tags-group {
-    justify-content: center;
-}
-
-.case-intro h1 {
-    margin-top: 0;
-}
-
-.responsibility table {
-    border-width: 1px;
-    border-color: #000000;
-}
-
-.responsibility th,
-td {
-    border-bottom: none;
-}
-
-.responsibility td {
-    vertical-align: top;
-}
-
-.big-text-section {
-    padding: 8rem 0;
-}
-
-.big-text-section h2 {
-    margin: 0;
-}
-
-.items-row {
-    padding: 8rem 0;
-}
-
-.image-caption-right {
-    padding-left: 4rem;
-    padding-bottom: 24px;
-}
-
-.image-caption-left {
-    padding-right: 3rem;
-    padding-bottom: 24px;
-}
-
-.impact-icon {
-    width: 20rem;
-    padding: 8rem 0 4rem 0;
-    margin: 0;
-}
-
-.navigation-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 16rem;
-    width: 100%;
-    margin-bottom: 120px;
-}
-
-.control-button {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.arrow-button {
-    width: 48px;
-    height: 48px;
+.prev, .next {
+    /* position: absolute; */
+    top: 50%;
+    /* right: 0; */
+    transform: translateY(-50%);
+    width: 48px; /* Size of the SVG */
+    height: 48px; /* Size of the SVG */
     background-color: rgb(0, 0, 0);
     cursor: pointer;
     z-index: 100;
@@ -609,93 +129,584 @@ td {
     justify-content: center;
 }
 
-.left-btn .link-text h3,
-.left-btn .link-text p {
-    margin-left: 24px;
-    text-align: left;
+.prev svg, .next svg {
+    fill: white; /* Adjust if you need a different color */
+    width: 50%;
+    height: auto;
 }
 
-.right-btn .link-text h3,
-.right-btn .link-text p {
-    margin-right: 24px;
-    text-align: right;
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+
+.tesmintonal-profile-pic{
+width: 80px;
+height: 80px;
+margin-right: 12px;
+
 }
 
-@media (max-width: 1000px) {
-    .arrow-button {
-        width: 40px;
-        height: 40px;
-    }
-
-    .link-text h3 {
-        font-size: 2rem;
-    }
-
-    .link-text figcaption {
-        font-size: 1.6rem;
-    }
-
-    .left-btn .link-text {
-        margin-left: 12px;
-    }
-
-    .right-btn .link-text {
-        margin-right: 12px;
-    }
+.testimonial-profile-wrapper{
+    display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin-bottom: 2rem;
 }
 
-@media (max-width: 800px) {
-    .link-text h3 {
-        font-size: 2rem;
-    }
+.tesminonail-paragraph{
+   text-align: left;
+font-size: 2rem;
+margin-bottom: 0;
+line-height: 180%;
 
-    .link-text figcaption {
-        font-size: 1.6rem;
-    }
-
-    .left-btn .link-text {
-        margin-left: 8px;
-    }
-
-    .right-btn .link-text {
-        margin-right: 8px;
-    }
 }
 
-@media (max-width: 600px) {
-    .navigation-links {
-        flex-direction: column;
-        align-items: center;
-        padding-top: 24px;
-        gap: 24px;
-    }
-
-    .control-button {
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-        /* width: 100%; */
-    }
+.testimonial-name-wrapper{
+     text-align: left;
 }
 
-@media screen and (max-width: 800px) {
-    .learning-item {
-        margin-bottom: 40px;
+    .testimonial-wrapper{
+        width: 50%; /* Each testimonial takes up half the width of the slide */
+            float: left; /* Align testimonials side by side */
+            box-sizing: border-box;
+            padding: 0 2rem; /* Optional: Adjust padding based on design needs */
+    
     }
+.linkedIn-card {
+    background: transparent !important;
+    border: 1.5px solid #000000;
+    color: #000000;
+    padding: 24px 60px;
+    margin: 0;
+    height: 160px;
+    width: auto;
+    display: block;
+    width: auto;
+    object-fit: contain;
+    margin-top: 16px;
+}
+.footer-contact-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+}
+
+.email-link svg {
+    margin-right: 8px;
+    /* margin-top: 4px; */
+}
+
+.footer-contact-wrap .email-link {
+    margin-top: 20px; /* Add margin to separate the elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-image {
+    margin-bottom: 20px;
+    display: block;
+    width: 40svw;
+    margin-bottom: 24px;
 }
 
 @media screen and (max-width: 900px) {
-    .case-intro .text-wrapper p {
-        width: 80vw;
+   .testimonial-wrapper {
+        width: 100%; /* Full width for smaller screens */
+         padding: 3rem 0 ;
+         margin-left: 3rem;
     }
 
-    .padding-left {
-        padding-left: 2rem;
-        padding-right: 0;
+
+
+
+
+.center-image {
+    margin-bottom: 20px;
+    display: block;
+    width: 40svw;
+    margin-bottom: 24px;
+}
+
+
+
+
+.footer-contact-wrap .email-link {
+    margin-top: 20px; /* Add margin to separate the elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-image {
+    margin-bottom: 20px;
+    display: block;
+    width: 60svw;
+    margin-bottom: 24px;
+}
+
+@media screen and (max-width: 600px) {
+
+ 
+.title-paragraph{
+    font-size: 2rem;
+  margin: 0px 18px 40px 18px;
+ line-height: 140%;
+}
+
+ .center-image {
+    width: 60svw;
+}
+
+.linkedIn-card {
+ 
+    padding: 4px 24px;
+  
+}
+
+.big-image{
+    height: 30svh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+.footer-image {
+    margin-bottom: 20px;
+    display: block;
+    width: 60svw;
+    margin-bottom: 24px;
+}
+
+}
+
+
+
+@media screen and (max-width: 900px) {
+
+    .comics-narrative{
+   justify-self: center;
+    }
+    
+    .comics-narrative p{
+        max-width: none;
+    }
+
+    figure img {
+
+        align-self: center;
+    }
+
+.text-home-title{
+font-size: 80px; 
+padding: 0 40px;   
+}
+.title-icon{
+width: 100px;
+height: 100px;
+
+}
+
+.title-paragraph{
+    font-size: 3rem;
+  margin: 0px 36px 40px 36px;
+ line-height: 140%;
+ text-align: center;
+}
+
+
+.work-card{
+    padding: 18px; 
+    margin-top: 24px;
+}
+
+
+.badge-wrap{
+    gap: 12px;
+  width: 100%;
+}
+
+
+.big-image{
+    height: 30svh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+ 
+.title-paragraph{
+    font-size: 2rem;
+  margin: 0px 18px 40px 18px;
+ line-height: 140%;
+}
+
+ .center-image {
+    width: 60svw;
+}
+
+.linkedIn-card {
+ 
+    padding: 4px 24px;
+  
+}
+
+.big-image{
+    height: 30svh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+
+}
+
+
+
+@media screen and (max-width: 400px) {
+
+.slider-contorls{
+ left: auto;
+top: 5rem;
+position: absolute;
+}
+
+
+
+.title-icon{
+width: 80px;
+height: 80px;
+margin-right: 12px;
+margin-bottom: 20px;
+margin-left: -16px;
+}
+
+.title-paragraph{
+    font-size: 2rem;
+  margin: 0px 18px 40px 18px;
+ line-height: 140%;
+}
+
+.work-card{
+    padding: 18px; 
+    margin-top: 24px;
+}
+
+.text-home-title{
+  
+  font-size      : 6rem;    
+  padding: 0 40px; 
+}
+
+     .industries-badges{
+    padding-right: 0px;
+    margin-bottom: 24px;
+  }
+
+ .center-image {
+    width: 80svw;
+}
+
+}
+
+/* about  */
+
+.about-page{
+    background-color: white;
+}
+
+
+
+.about-hero{
+    padding-top : 20svh;
+    width       : 100%;
+    position    : relative;
+     /* background-color: #ffe81d; */
+     min-height: 100svh;
+     height: auto;
+     margin-bottom: 80px;
+     padding-bottom: 24px;
+    
+}
+
+
+.section-title{
+    /* text-align: center; */
+    font-size: 2.5em;
+    /* margin: 0 auto; */
+    width: 92%;
+    /* padding: 0 20px; */
+}
+
+
+.content-paragraph{
+padding-top: 200px;
+}
+
+.process-item{
+ margin-top: 2rem;
+}
+
+.my-process-icon{
+width: 12rem;
+margin: 0;
+}
+
+
+
+#my-process{
+     /* background-color: #ffe81d; */
+    padding: 8rem 0 8rem 0;
+}
+
+
+#experience{
+     background-color: #ffe81d;
+    padding: 8rem 0 8rem 0;
+}
+
+/* tools  */
+#tools-section .row{
+     /* background-color: #ffe81d; */
+    padding: 8rem 0 8rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  > div {
+    background: black;
+    padding: 1rem;
+    position: relative;
+    &::before {
+      // for apsect ratio
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    .grid img {
+      position: absolute;
+      max-width: 100%;
+
+      // Alternate Version
+      // top: 0;
+      // bottom: 0;
+      // right: 0;
+      // left: 0;
+      // margin: auto;
+
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.articles{
+    padding: 8rem 0 8rem 0;
+    /* margin: 120px 0 120px 0; */
+}
+
+
+
+.process-item h3{
+    margin-top: 2rem;
+}
+
+.remove-padding{
+    padding: 0;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .process-item{
+      margin-bottom: 4rem;
+      padding: 0 16rem 0 16rem;
+    }
+    .section-title{
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+
+.block-stack-on-700 .process-item{
+    /* width: 80%; */
+}
+
+.about-hero{
+text-align: center;
+}
+
+.process-item{
+    padding: 0 4rem 0 4rem;
+}
+.articles figure{
+    margin: 0;
+}
+
+
+.articles p{
+    margin: 0;
+}
+
+.hero_image{
+   height: 60svh;
+}
+
+
+
+}
+
+.fun-fact-article{
+margin-top: 0;
+margin-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+    #about-hero img{
+width: 80vw;
+    }
+.articles{
+    padding: 8rem 3rem 8rem 3rem;
+    /* margin: 120px 0 120px 0; */
+}
+#tools-section .row{
+     /* background-color: #ffe81d; */
+    padding: 8rem 3rem 8rem 3rem;
+}
+
+ .testimonial-wrapper {
+        width: 100%; /* Full width for smaller screens */
+         padding: 1rem 0 ;
+         margin-left: 0;
     }
 }
 
-</style>
+
+/* case study  */
+
+.case-study-hero {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Maintaining a 16:9 ratio */
+    max-height: 80vh;
+    overflow: hidden;
+    
+}
+
+.case-study-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    display: block; /* Eliminates any space below the image */
+}
+
+
+
+
+
+/* case study  */
+
+body{
+    background-color: white;
+}
+
+
+
+.case-intro{
+     background-color: white;
+     padding: 8rem 0 8rem 0;
+}
+
+.case-intro .text-wrapper{
+    text-align: center;
+}
+
+.case-intro .text-wrapper p{
+    width: 30vw; /* Set the width of the text box */
+    padding: 0px; /* Optional: add some padding */
+    display: block; /* Ensure it respects text-align center */
+    margin: 36px auto; /* Center it horizontally */
+   
+}
+
+
+
+.case-intro .tags-group{
+    justify-content: center;
+}
+
+.case-intro h1{
+    margin-top: 0;
+}
+
+.responsibility table{
+    border-width: 1px;
+   border-color: #000000;
+}
+
+.responsibility th, td {
+    border-bottom: none;
+}
+
+
+
+.responsibility td {
+    vertical-align: top;
+}
+
+
+.big-text-section{
+    padding: 8rem 0 8rem 0;
+}
+
+.big-text-section h2{
+  margin: 0;
+}
+
+.items-row{
+    padding: 8rem 0 8rem 0;
+}
+
+.caption-image{
+    margin-top: 2rem;
+}
+
+
+
+@media screen and (max-width: 900px) {
+.case-intro .text-wrapper p{
+    width: 80vw; /* Set the width of the text box */   
+}
+}
+
+@media screen and (max-width: 600px){
+
+blockquote {
+    margin: 2rem 0;
+    padding-left: 0;
+    border-left: 0;
+}
+
+
+}
+
+    </style> 
 
     <!-- Favicons -->
   <link rel="icon" href="/images/favicon_luca.png" type="image/png">
@@ -711,7 +722,7 @@ td {
 
 <!-- Site Header -->
 <header id="masthead" class="s-header">
-    <div class="s-hader__block">
+    <div class="s-header__block">
         <div class="s-header__branding">
             <p class="site-title">
                 <a href="index.html" rel="home">Luca Luk</a>
@@ -724,33 +735,18 @@ td {
         <nav class="s-header__nav">
             <ul>
                 <!-- Dropdown Menu for Work -->
-<li class="dropdown">
+               <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">
         Work
         <img src="images/arrow-down.svg" alt="Dropdown Arrow" class="dropdown-arrow">
     </a>
-    <div class="dropdown-content ">
-
-        <a href="mobile-cheque-deposit.html">
-       <p class="badge remove-margin-bottom" style="color: white; text-decoration: none;">UX</p>
-        <p>Mobile Cheque Deposit Feature</p>
+    <div class="dropdown-content">
+        <a href="mobile-cheque-deposit.html">Mobile Cheque Deposit Feature
+        
+        
         </a>
-
-        <div style="clear: both;"></div> 
-
-        <a href="corporate-banking-revamp.html">
-       <p class="badge remove-margin-bottom" style="color: white; text-decoration: none;">Research</p>
-        <p>Corporate Banking App</p>
-        </a>
-
-        <div style="clear: both;"></div> 
-
-        <a href="education-website-revamp.html">
-       <p class="badge remove-margin-bottom" style="color: white; text-decoration: none;">UIUX</p>
-        <p>Education Network Website</p>
-        </a>
-
-
+        <a href="corporate-banking-revamp.html">Corporate Banking Revamp</a>
+        <a href="education-website-revamp.html">Education Website Revamp</a>
     </div>
 </li>
                 <li><a href="about.html">About</a></li>
@@ -761,18 +757,19 @@ td {
         <ul class="s-header__social">
             <li>
                 <a href="https://www.linkedin.com/in/lucaluk" target="_blank">
-                    <img src="images/icons/linkedin.svg" alt="" class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.5 20h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75c.96 0 1.75.79 1.75 1.75s-.79 1.76-1.75 1.76zm14.5 12.27h-3v-5.66c0-1.35-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.98v5.75h-3v-11h2.87v1.5h.04c.4-.75 1.37-1.54 2.81-1.54 3.01 0 3.57 1.98 3.57 4.55v6.49z"/>
+                    </svg>
                     <span class="u-screen-reader-text">LinkedIn</span>
                 </a>
             </li>
             <li>
-                
-                
-<a href="javascript:void(0);" onclick="copyEmailToClipboard()" style="position: relative;">
-    <img src="images/icons/email-link.svg" alt="" class="nav-icon">
-    <span class="u-screen-reader-text">Email</span>
-    <span id="tooltip" class="tooltip-text">Email copied!</span> <!-- Tooltip -->
-</a>
+                <a href="mailto:luca.kahim.luk@gmail.com" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M20 4h-16c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2zm0 4-8 5-8-5v-2l8 5 8-5v2z"/>
+                    </svg>
+                    <span class="u-screen-reader-text">Email</span>
+                </a>
             </li>
         </ul>  
     </div> <!-- end s-header__nav-wrap -->
@@ -840,7 +837,7 @@ td {
    
      <div class="column lg-6 " data-animate-el>
         <div class="">
-            <h3 class="title-paragraph">Navigating <b>complex products</b>, integrating systems, and mastering backend operations.  </h3>
+            <h3 class="title-paragraph">Navigating complex products, integrating systems, and mastering backend operations.  </h3>
         </div>
       
 
@@ -853,11 +850,11 @@ td {
        <div class="column " data-animate-el>
     <div class="folio-item__info">
           <div class=" tags-group">
-             <p class="badge remove-margin-bottom"  >UX</p>
-             <!-- <strong>UX Design</strong> -->
-            <p class="remove-margin-bottom">Mobile App / 2023</p>
+             <p class="badge remove-margin-bottom"  >Mobile App</p>
+             <strong>UX Design</strong>
+            <p class="remove-margin-bottom">2023</p>
         </div>
-        <h4 class="folio-item__title">Cheque Deposit for Corporate Bank</h4>
+        <h4 class="folio-item__title">Cheque Deposit Feature for Corporate Bank</h4>
     </div>
     
     <p class="work-link-text"> Designed a complex end-to-end journey with <b>23 challenging unhappy flows</b> and successfully <b>navigated a critical IT roadblock</b> when development constraints arose.
@@ -918,7 +915,7 @@ td {
    
      <div class="column lg-6 " data-animate-el>
         <div class="">
-            <h3 class="title-paragraph">Bridging the gap between clients, business, and developers for seamless <b>collaboration</b>. </h3>
+            <h3 class="title-paragraph">Bridging the gap between clients, business, and developers for seamless collaboration. </h3>
         </div>
       
 
@@ -931,14 +928,14 @@ td {
        <div class="column " data-animate-el>
     <div class="folio-item__info">
           <div class=" tags-group">
-             <p class="badge remove-margin-bottom">Research</p>
-             <!-- <strong>Research</strong> -->
-            <p class="remove-margin-bottom">App + Web / 2023</p>
+             <p class="badge remove-margin-bottom">Web+App</p>
+             <strong>Research</strong>
+            <p class="remove-margin-bottom">2023</p>
         </div>
-        <h4 class="folio-item__title">Corporate Banking App</h4>
+        <h4 class="folio-item__title">Corporate Digital Banking Revamp</h4>
     </div>
     
-    <p class="work-link-text"> 	Led a digital banking revamp by collaborating across teams to <b>prioritize solutions based on business value</b>, <b>co-creating effective solutions with IT</b>, ensuring strategic decisions were well-informed.</p>
+    <p class="work-link-text"> 	Led a digital banking revamp by <b>collaborating across teams</b> to <b>prioritize solutions based on business value</b>, <b>co-creating effective solutions with IT</b>, ensuring strategic decisions were well-informed.</p>
     </div> <!-- end column -->
 
 
@@ -993,7 +990,7 @@ td {
    
      <div class="column lg-6 " data-animate-el>
         <div class="">
-            <h3 class="title-paragraph white-text">Identifying what truly matters to users and stakeholders, and translating it into <b>actionable strategies</b>. </h3>
+            <h3 class="title-paragraph white-text">Identifying what truly matters to users and stakeholders, and translating it into actionable strategies. </h3>
         </div>
       
 
@@ -1006,15 +1003,15 @@ td {
        <div class="column " data-animate-el>
     <div class="folio-item__info">
           <div class=" tags-group ">
-             <p class="badge-white remove-margin-bottom">UIUX</p>
-             <!-- <strong class="white-text">UX/UI Design</strong> -->
-            <p class="remove-margin-bottom white-text">Responsive Web / 2022</p>
+             <p class="badge-white remove-margin-bottom">Web</p>
+             <strong class="white-text">UX/UI Design</strong>
+            <p class="remove-margin-bottom white-text">2022</p>
         </div>
-        <h4 class="folio-item__title white-text">Education Network Website</h4>
+        <h4 class="folio-item__title white-text">Education Network Revamp</h4>
     </div>
     
     <p class="white-text work-link-text"> 
-   	<b>Aligned business goals with user needs</b> by considering all stakeholders, from clients to IT vendors, and developed a detailed strategy. This project also showcases my <b>UI design and design system</b> expertise.
+   	Aligned business goals with user needs by considering all stakeholders, from clients to IT vendors, and developed a detailed strategy. This project also showcases my UI design and design system expertise.
 </p>
     </div> <!-- end column -->
 
@@ -1085,7 +1082,7 @@ td {
             </div>
         </div>
 
-         <div class="column lg-6 md-12   projects-padding projects-badges" >
+         <div class="column lg-6   md-12">
             
             <h3 class="text-subtitle "> Projects</h3>
 
@@ -1098,9 +1095,9 @@ td {
                 <div> <p class="badge remove-margin-bottom">Accounting Platform</p></div>
                 <div> <p class="badge remove-margin-bottom">Website Revamp</p></div>
                 <div> <p class="badge remove-margin-bottom">Brand Website</p></div>
-                <div> <p class="badge remove-margin-bottom">New Product Launch</p></div>
                 <div> <p class="badge remove-margin-bottom">eCommerce Site</p></div>
                 <div> <p class="badge remove-margin-bottom">Gamification Campign</p></div>
+                <div> <p class="badge remove-margin-bottom">New Product Page</p></div>
             
             </div>
         </div>
@@ -1116,7 +1113,7 @@ td {
    
     <div class="row ">
             <div class="column lg-12">
-                <h2 class="text-huge-title remove-padding"> Inspiring Mentors I Enjoyed Working With</h2>
+                <h2 class="text-huge-title "> Inspiring Mentors I Enjoyed Working With</h2>
             </div>
         </div>
    
@@ -1148,7 +1145,7 @@ td {
             
                   <div class="row block-stack-on-900 ">
         
-                    <div class="lg-6 tab-12 column testimonial-wrapper">
+                    <div class="lg-6 mob-12 column testimonial-wrapper">
                         <blockquote >
                             <div class="testimonial-profile-wrapper">
                                 <img class="tesmintonal-profile-pic remove-margin-bottom" src="/images/ear.png" 
@@ -1173,7 +1170,7 @@ td {
                         </blockquote>
                     </div>
 
-                    <div class="lg-6 tab-12 column testimonial-wrapper">
+                    <div class="lg-6 mob-12 column testimonial-wrapper">
                         <blockquote >
                         
 
@@ -1266,8 +1263,8 @@ td {
                                 </div>
                             </div>
                                     <p class="tesminonail-paragraph"> Luca has been a phenomenal student and her passion for design and problem solving came out since our first session
-                            together. Her work has always been very thorough and she's not shy in going the
-                            extra mile. Her <b>enthusiasm for learning and improving</b> make her a great
+                            together. Her work has always been very thorough and she's <b>not shy in going the
+                            extra mile</b>. Her enthusiasm for learning and improving make her a great
                             candidate for a dynamic team. </p>
                         </blockquote>
                     </div>
@@ -1326,17 +1323,25 @@ td {
         <div class="column lg-12">
           
             <div class="footer-contact-wrap">
-                <img src="images/ear.png" class="footer-image" alt="Profile Image">
+                <img src="images/wheel-500.jpg" class="footer-image" alt="Profile Image">
 
                       <h2 class="text-big-title center remove-margin-top">
-                Let's Connect!
+                Connect before you leave!
             </h2>
         
 
                         <div class=" footer-contact-wrap">
                              <a href="www.linkedin.com/in/lucaluk" target="_blank" class=""><img  src="  ./images/LinkedInStyleContactCard.png" class="linkedIn-card " alt=""></a>
                              
- 
+                             
+                              <a href="mailto:luca.kahim.luk@gmail.com" target="_blank" class="email-link">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M20 4h-16c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2zm0 4-8 5-8-5v-2l8 5 8-5v2z"/>
+                                 </svg>
+
+                                luca.kahim.luk@gmail.com
+                                <span class="u-screen-reader-text">Email</span>
+                            </a>
                        
                          </div>
                           
@@ -1347,7 +1352,7 @@ td {
 
             <div class="row s-footer__bottom">
                 <div class="column ss-copyright">
-                    <p>© 2024 Luca Luk / luca.kahim.luk@gmail.com </p> 
+                    <span>© Copyright Luca Luk 2024</span> 
                   
                 </div>
 
@@ -1367,8 +1372,100 @@ td {
     <!-- JavaScript -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/script.js"></script>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let slideIndex = 1;
+            handleResize();
 
+            window.addEventListener('resize', debounce(handleResize, 250));
+
+            function handleResize() {
+                createSlides();
+                createDots();
+                showSlide(slideIndex);
+                bindSlideButtons();
+            }
+
+            function bindSlideButtons() {
+                document.querySelector('.prev').onclick = function() { changeSlide(-1); };
+                document.querySelector('.next').onclick = function() { changeSlide(1); };
+            }
+
+                        function createSlides() {
+                const viewportWidth = window.innerWidth;
+                const perSlide = viewportWidth > 900 ? 2 : 1;
+                const testimonials = document.querySelectorAll('.testimonial-wrapper');
+                const sliderContainer = document.querySelector('.slides');
+                sliderContainer.innerHTML = '';
+
+                for (let i = 0; i < testimonials.length; i += perSlide) {
+                    const slide = document.createElement('div');
+                    slide.className = 'slide';
+                    for (let j = 0; j < perSlide && (i + j) < testimonials.length; j++) {
+                        slide.appendChild(testimonials[i + j].cloneNode(true));
+                    }
+                    sliderContainer.appendChild(slide);
+                }
+            }
+
+            function createDots() {
+                const slides = document.getElementsByClassName("slide");
+                const dotsContainer = document.querySelector(".slider-dots");
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < slides.length; i++) {
+                    const dot = document.createElement("span");
+                    dot.classList.add("dot");
+                    dot.onclick = function () { currentSlide(i + 1); };
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function currentSlide(n) {
+                showSlide(slideIndex = n);
+            }
+
+            function changeSlide(n) {
+                showSlide(slideIndex += n);
+            }
+
+            function showSlide(n) {
+                const slides = document.getElementsByClassName("slide");
+                const dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1; }
+                if (n < 1) { slideIndex = slides.length; }
+                Array.from(slides).forEach(slide => slide.style.display = "none");
+                Array.from(dots).forEach(dot => dot.className = dot.className.replace(" active", ""));
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+
+            function debounce(func, wait, immediate) {
+                let timeout;
+                return function() {
+                    const context = this, args = arguments;
+                    const later = function() {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    const callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            }
+        });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.querySelector('.dropdown');
+    const dropbtn = dropdown.querySelector('.dropbtn');
+    const arrow = document.querySelector('.dropdown-arrow')
+
+    dropbtn.addEventListener('click', function(event) {
+        
+        arrow.classList.toggle('transformed')
+        dropdown.classList.toggle('expanded');
+    });
+});
+    </script>
 </body>
 </html>

@@ -1014,54 +1014,86 @@ order: -1;
     </style> 
     <!-- favicons
     ================================================== -->
-   <link rel="icon" href="/images/favicon_luca.png" type="image/png">
+   <link rel="icon" href="images/favicon_luca.png" type="image/png">
 
 </head>
 
 
 
-<body id="top-about" class="about-page">
+<body id="top-ycyw" class="about-page">
     <div id="preloader">
         <div id="loader" class="line"></div>
     </div>
     <div id="page" class="s-pagewrap">
-        <header id="masthead" class="s-header">
-            <div class="s-header__block">
-                <div class="s-header__branding">
-                    <p class="site-title">
-                        <a href="index.html" rel="home">Luca Luk</a>
-                    </p>
-                </div>
-                <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-            </div>
-            <div class="row s-header__nav-wrap">
-                <nav class="s-header__nav">
-                    <ul>
-                        <li><a href="index.html#all_works">Home</a></li>
-                        <li><a href="about.html" class="current">About</a></li>
-                        <li><a href="Luca-Luk-CV.pdf" target="_blank" rel="noopener noreferrer">CV</a></li>
-                    </ul>
-                </nav>
-                <ul class="s-header__social">
-                    <li>
-                        <a href="https://www.linkedin.com/in/lucaluk" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.5 20h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75c.96 0 1.75.79 1.75 1.75s-.79 1.76-1.75 1.76zm14.5 12.27h-3v-5.66c0-1.35-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.98v5.75h-3v-11h2.87v1.5h.04c.4-.75 1.37-1.54 2.81-1.54 3.01 0 3.57 1.98 3.57 4.55v6.49z"/>
-                            </svg>
-                            <span class="u-screen-reader-text">LinkedIn</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:luca.kahim.luk@gmail.com" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M20 4h-16c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2zm0 4-8 5-8-5v-2l8 5 8-5v2z"/>
-                            </svg>
-                            <span class="u-screen-reader-text">Email</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </header>
+    
+    <header id="masthead" class="s-header">
+    <div class="s-hader__block">
+        <div class="s-header__branding">
+            <p class="site-title">
+                <a href="index.html" rel="home">Luca Luk</a>
+            </p>
+        </div>
+        <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+    </div> <!-- end s-header__block -->
+
+    <div class="row s-header__nav-wrap">
+        <nav class="s-header__nav">
+            <ul>
+                <!-- Dropdown Menu for Work -->
+<li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">
+        Work
+        <img src="images/arrow-down.svg" alt="Dropdown Arrow" class="dropdown-arrow">
+    </a>
+    <div class="dropdown-content ">
+
+        <a href="mobile-cheque-deposit.html">
+       <p class="badge remove-margin-bottom" style="color: white; text-decoration: none;">UX</p>
+        <p>Mobile Cheque Deposit Feature</p>
+        </a>
+
+        <div style="clear: both;"></div> 
+
+        <a href="corporate-banking-revamp.html">
+       <p class="badge remove-margin-bottom" style="color: white; text-decoration: none;">Research</p>
+        <p>Corporate Banking App</p>
+        </a>
+
+        <div style="clear: both;"></div> 
+
+        <a href="education-website-revamp.html">
+       <p class="badge remove-margin-bottom" style="color: white; text-decoration: none;">UIUX</p>
+        <p>Education Network Website</p>
+        </a>
+
+
+    </div>
+</li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Luca-Luk-CV.pdf" target="_blank" rel="noopener noreferrer">CV</a></li>
+            </ul>
+        </nav> <!-- end s-header__nav -->
+
+        <ul class="s-header__social">
+            <li>
+                <a href="https://www.linkedin.com/in/lucaluk" target="_blank">
+                    <img src="images/icons/linkedin.svg" alt="" class="nav-icon">
+                    <span class="u-screen-reader-text">LinkedIn</span>
+                </a>
+            </li>
+            <li>
+                
+                
+<a href="javascript:void(0);" onclick="copyEmailToClipboard()" style="position: relative;">
+    <img src="images/icons/email-link.svg" alt="" class="nav-icon">
+    <span class="u-screen-reader-text">Email</span>
+    <span id="tooltip" class="tooltip-text">Email copied!</span> <!-- Tooltip -->
+</a>
+            </li>
+        </ul>  
+    </div> <!-- end s-header__nav-wrap -->
+</header> <!-- end s-header -->
+
 
         <section class="case-study-hero">
             <picture>
@@ -1761,32 +1793,24 @@ order: -1;
                 
 
 
-        <!-- # site footer
+             <!-- # site footer
         ================================================== -->
-       <footer id="colophon" class="s-footer" style="margin-top: 120px;">
+       <footer id="colophon" class="s-footer">
     <div class="row s-footer__contact-header">
         <div class="column lg-12">
           
             <div class="footer-contact-wrap">
-                <img src="images/wheel-500.jpg" class="footer-image" alt="Profile Image">
+                <img src="images/ear.png" class="footer-image" alt="Profile Image">
 
-                      <h2 class="text-big-title center " style="padding: 12px 0;">
-                Connect before you leave!
+                      <h2 class="text-big-title center remove-margin-top">
+                Let's Connect!
             </h2>
         
 
                         <div class=" footer-contact-wrap">
                              <a href="www.linkedin.com/in/lucaluk" target="_blank" class=""><img  src="  ./images/LinkedInStyleContactCard.png" class="linkedIn-card " alt=""></a>
                              
-                             
-                              <a href="mailto:luca.kahim.luk@gmail.com" target="_blank" class="email-link">
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M20 4h-16c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2zm0 4-8 5-8-5v-2l8 5 8-5v2z"/>
-                                 </svg>
-
-                                luca.kahim.luk@gmail.com
-                                <span class="u-screen-reader-text">Email</span>
-                            </a>
+ 
                        
                          </div>
                           
@@ -1797,7 +1821,7 @@ order: -1;
 
             <div class="row s-footer__bottom">
                 <div class="column ss-copyright">
-                    <span>© Copyright Luca Luk 2024</span> 
+                    <p>© 2024 Luca Luk / luca.kahim.luk@gmail.com </p> 
                   
                 </div>
 
